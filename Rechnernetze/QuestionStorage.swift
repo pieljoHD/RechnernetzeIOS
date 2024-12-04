@@ -58,9 +58,9 @@ class QuestionStorage: ObservableObject {
             question: "Sie sind Administrator eines kleinen Unternehmens, das Callcenter-Dienste für andere Firmen anbietet. Eine Mitarbeiterin ruft Sie an und beschwert sich, dass das Foto ihres Enkels, das sie als Desktop-Hintergrund festgelegt hat, bei der Anmeldung heute morgen verschwunden war. Was ist die wahrscheinlichste Ursache des Problems?",
             options: [
                 Option(answer: "Ihr Benutzerprofil ist beschädigt", isCorrect: false),
-                Option(answer: "Sie hat sich am falschen Computer angemeldet", isCorrect: true),
+                Option(answer: "Sie hat sich am falschen Computer angemeldet", isCorrect: false),
                 Option(answer: "Sie hat sich lokal angemeldet", isCorrect: false),
-                Option(answer: "Ihr wurde ein verbindliches Profil zugewiesen", isCorrect: false)
+                Option(answer: "Ihr wurde ein verbindliches Profil zugewiesen", isCorrect: true)
             ]
         ),
         Question(
