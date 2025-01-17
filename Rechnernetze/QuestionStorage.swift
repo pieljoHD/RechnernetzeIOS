@@ -327,7 +327,7 @@ class QuestionStorage: ObservableObject {
             question: "Which of the following are valid domain and forest functional levels for a Windows Server 2016 domain? (Choose all that apply.)",
             options: [
                 Option(answer: "Windows 2000 mixed", isCorrect: false),
-                Option(answer: "Windows 2000 native", isCorrect: false),
+                Option(answer: "Windows 2000 native", isCorrect: true),
                 Option(answer: "Windows Server 2003 mixed", isCorrect: false),
                 Option(answer: "Windows Server 2003 native", isCorrect: true),
                 Option(answer: "Windows Server 2008 native", isCorrect: true),
@@ -348,9 +348,276 @@ class QuestionStorage: ObservableObject {
             question: "Jason is a support technician who is creating user accounts for a series of new employees that your company has hired. After creating several dozen user accounts successfully, he suddenly receives an error message informing him that Active Directory cannot create the account. He comes to you for assistance.",
             options: [
                 Option(answer: "Check the operational status of the infrastructure master.", isCorrect: false),
-                Option(answer: "Check the operational status of the RID master.", isCorrect: false),
+                Option(answer: "Check the operational status of the RID master.", isCorrect: true),
                 Option(answer: "Check the operational status of the PDC emulator.", isCorrect: false),
                 Option(answer: "Check the amount of disk space on the computer Jason is using.", isCorrect: false)
+            ]
+        )
+        //------------NEW QUESTIONS FROM HERE------------
+        ,
+        Question(
+            question: "Which of the following are default hidden shares under Windows Server 2003? (Choose three.)",
+            options: [
+                Option(answer: "SYSVOL", isCorrect: false),
+                Option(answer: "ADMIN$", isCorrect: true),
+                Option(answer: "CD$", isCorrect: false),
+                Option(answer: "PRINTER$", isCorrect: false),
+                Option(answer: "IPC$", isCorrect: true),
+                Option(answer: "C$", isCorrect: true)
+            ]
+        ) ,
+        Question(
+            question: "What does the Shared Folders snap-in provide in terms of setting permissions for a new share that the Sharing tab of a foler's properties sheet does not offer?",
+            options: [
+                Option(answer: "Setting share permissions", isCorrect: false),
+                Option(answer: "Publishing the share in active Directory", isCorrect: false),
+                Option(answer: "Specifying offline settings", isCorrect: false),
+                Option(answer: "Specifying both share permissions and NTFS permissions", isCorrect: true),
+                Option(answer: "Specifying Web Sharing access permission", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "When both share permissions and NIFS permissions exist on the same shared folder, how is access control to the shared folder affected for users trying to access the files stored in the shared folder over the network?",
+            options: [
+                Option(answer: "NTFS permissions take precedence.", isCorrect: false),
+                Option(answer: "Share permissions take precedence.", isCorrect: false),
+                Option(answer: "The most liberal permissions take precedence.", isCorrect: false),
+                Option(answer: "The most restrictive permissions take precedence", isCorrect: true)
+            ]
+        ) ,
+        Question(
+            question: "Which of the following characteristics apply to NTFS inherited permissions? (Choose three.)",
+            options: [
+                Option(answer: "Special permissions are inherited by default.", isCorrect: true),
+                Option(answer: "Basic permissions are inherited by default.", isCorrect: true),
+                Option(answer: "Explicit permissions are the same as inherited permissions.", isCorrect: false),
+                Option(answer: "NTFS permissions are inherited by default.", isCorrect: true),
+                Option(answer: "NTFS explicit permissions are not inherited by default.", isCorrect: false),
+                Option(answer: "You cannot set explicit permissions on files.", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "The basic NTFS permission, Modify, when set or a folder, consists of which of the following special permissions? (Choose three.)",
+            options: [
+                Option(answer: "List Folder/Read Data", isCorrect: true),
+                Option(answer: "Create Files/Write Data", isCorrect: true),
+                Option(answer: "Change Permissions", isCorrect: false),
+                Option(answer: "Delete Subfolders and Files", isCorrect: false),
+                Option(answer: "Take Ownership", isCorrect: false),
+                Option(answer: "Write Extended Attributes", isCorrect: true)
+            ]
+        ) ,
+        Question(
+            question: "When you view NTFS effective permissions for a user or a group, which of the following permissions are displayed?",
+            options: [
+                Option(answer: "Basic permissions", isCorrect: false),
+                Option(answer: "Special permissions", isCorrect: true),
+                Option(answer: "Share permissions", isCorrect: false),
+                Option(answer: "Not inherited permissions", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "In which of the following ways can ownership of an NTFS file or folder change? (Choose three.)",
+            options: [
+                Option(answer: "Any user who is a member of the Domain Users group can take ownership of any folder or file whether or not she has permissions to the folder or file.", isCorrect: false),
+                Option(answer: "The current owner of a file or folder can assign the Take Ownership permission to another user for the file or folder; the other user must then take ownership of the object.", isCorrect: true),
+                Option(answer: "A member of the Administrators group can assign ownership of a file or folder to another user.", isCorrect: true),
+                Option(answer: "Any user who is granted the Restore Files and Directories user right can assign ownership of a file or folder to another user.", isCorrect: true),
+                Option(answer: "Any member of the Backup Operators group can take ownership of any file or folder at any time.", isCorrect: false),
+                Option(answer: "Any member of the Authenticated Users group can assign ownership of files or folders to another user at any time.", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "You have an APPl folder on a Windows Server 2003 computer. Userl belongs to Groupl and Group2. Userl has no NTFS permissions assigned. Groupl has Allow Read NTES permission, and Group2 has Allow Modify NTFS permission. What permission does Userl have for the APP1 folder?",
+            options: [
+                Option(answer: "Allow Full Control NTFS permission", isCorrect: false),
+                Option(answer: "Allow Modify NTFS permission", isCorrect: true),
+                Option(answer: "Allow Read NTFS permission", isCorrect: false),
+                Option(answer: "No access NTFS permission", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "You have an APP1 folder on a Windows Server 2003 computer. Userl belongs to Groupl and Group2. Userl has Allow Full Control NTES permission, and Group2 has Allow Modify NTES permission. Groupl has Deny Full Control NTFS permission. What permission does Userl have for the APP1 folder?",
+            options: [
+                Option(answer: "Allow Full Control", isCorrect: false),
+                Option(answer: "Allow Modify", isCorrect: false),
+                Option(answer: "Allow Read", isCorrect: false),
+                Option(answer: "No access", isCorrect: true)
+            ]
+        ) ,
+        Question(
+            question: "On a Windows Server 2003 computer, you have a shared folder called DATA1. You apply the default share permissions and NTFS permissions to DATA1. You then create a folder called DATA2 in DATAl. You apply the default NTFS permissions to DATA2. When GROUP1 tries to add files to DATA2, they get an \"Access is denied\" ertor message. What do you need to do so that GROUP1 can create, modify, and delete files in DATA1 and DATA2? All other users must be able to read the files in DATAl and DATA2.",
+            options: [
+                Option(answer: "For the DATA1 folder, assign the Change share permission to the Everyone group. For the DATA2 folder, assign the Allow Write NTFS permission for GROUP1 group.", isCorrect: false),
+                Option(answer: "For the DATA1 folder, assign the Change share permission to the GROUP1 group and assign the Allow Write NTFS permissions to the GROUP1 group.", isCorrect: false),
+                Option(answer: "For the DATAl folder, assign the Change share permissions to the Everyone group and assign the Allow Modify NTFS permissions to the GROUP1 group.", isCorrect: false),
+                Option(answer: "For the DATAl folder, assign the Change share permissions to the GROUP1 and assign the Allow Modify NTFS permissions to the GROUP1 group.", isCorrect: true)
+            ]
+        ) ,
+        Question(
+            question: "On a Windows Server 2003 computer, you have a shared folder called APP1. At this time. Joe does not belong to the Sales, Marketing, or Executive group. You set the NTFS and APP1 as shown in the following table: HERE SHOULD BE A TABLE (lern die Frage einfach auswendig) \n You want Joe to be able to make changes to the files in the APPI folder. What should you do?",
+            options: [
+                Option(answer: "Assign Joe to the Sales group and assign Allow Write NTFS permission to the Sales group.", isCorrect: true),
+                Option(answer: "Assign Joe to the Executive group and assign the Allow Write NTFS permission to the Executive group.", isCorrect: false),
+                Option(answer: "Assign Joe to the Executive group and assign the Change share permission to the Executive group.", isCorrect: false),
+                Option(answer: "Assign the Full Control share permission to Everyone.", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "Im Rahmen einer Konsolidierungsmaßnahme verschieben Sie eine Reihe freigegebener Ordner auf einen neuen 2003-Server. Nachdem Sie die Ordner samt Dateien per xcopy verschoben haben, nehmen Sie den Server in Produktionsbetrieb. Und schon klingelt Ihr Telefon und Benutzer beschweren sich, dass sie die Freigaben nicht sehen können. Wie beheben Sie dieses Problem?",
+            options: [
+                Option(answer: "Sie müssen die NTFS-Berechtigungen umkonfigurieren.", isCorrect: true),
+                Option(answer: "Sie müssen die Freigabeberechtigungen umkonfigurieren.", isCorrect: true),
+                Option(answer: "Sie müssen den Dienst Server auf dem neuen Server neu starten.", isCorrect: false),
+                Option(answer: "Sie müssen die Freigaben erneut freigeben.", isCorrect: true),
+                Option(answer: "Sie müssen den Freigaben eindeutige Namen geben", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "Die Assistentin des Geschäftsführers kündigt fristlos. In den persönlichen Ordnern der Assistentin gibt es mehrere Dateien, auf die der Geschäftsführer zugreifen muss. Die Ordner haben die folgende Berechtigung:\n" +
+            "AssistentinGeschf: Vollzugriff\n" +
+            "Alle ihre Ordner befinden sich auf einem Server, der mit NTFS formatiert ist. Wie geben Sie dem Geschäftsführer am schnellsten Zugriff auf diese Dateien?",
+            options: [
+                Option(answer: "Setzen Sie das Kennwort der Assistentin zurück. Geben Sie dem Geschäftsführer die Benutzerkennung und das neue Kennwort.", isCorrect: false),
+                Option(answer: "Übertragen Sie die Besitzrechte der Ordner an den Geschäftsführer.", isCorrect: true),
+                Option(answer: "Übernehmen Sie die Besitzrechte der Ordner und geben Sie dem Geschäftsführer Vollzugriff.", isCorrect: false),
+                Option(answer: "Verschieben Sie die Dateien in die Ordner des Geschäftsführers.", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "Der Ordner Verträge hat die folgenden Berechtigungen:\n" +
+            "Freigabeberechtigungen:\n" +
+            "Geschäftsführung: Vollzugriff\n" +
+            "Rechtsabteilung: Ändern\n" +
+            "Personalabteilung: Lesen\n" +
+            "NTFS-Berechtigungen:\n" +
+            "Geschäftsführung: Vollzugriff\n" +
+            "Rechtsabteilung: Ändern\n" +
+            "Personalabteilung: Lesen\n" +
+            "Angenommen, Bernd ist Mitglied der Rechtsabteilung und der Personalabteilung. Wie lautet dann seine effektive Berechtigung über das Netzwerk?",
+            options: [
+                Option(answer: "Ändern (Freigabeberechtigung)", isCorrect: true),
+                Option(answer: "Ändern (NTFS-Berechtigung)", isCorrect: false),
+                Option(answer: "Lesen", isCorrect: false),
+                Option(answer: "Vollzugriff", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "GPOs cannot be linked to which of the following?",
+            options: [
+                Option(answer: "Site", isCorrect: false),
+                Option(answer: "Domain", isCorrect: false),
+                Option(answer: "First Level Organizational units", isCorrect: false),
+                Option(answer: "Second Level Organizational Units", isCorrect: false),
+                Option(answer: "Groups", isCorrect: true)
+            ]
+        ) ,
+        Question(
+            question: "When you want to make sure that a domain GPO is not overwritten by an organizational unit GPO, what should you do?",
+            options: [
+                Option(answer: "Make sure that the organizational unit GPO is listed before the domain GPO", isCorrect: false),
+                Option(answer: "Make sure to disable the organizational unit", isCorrect: false),
+                Option(answer: "Make sure that the No Override option is selected for the domain GPO", isCorrect: true),
+                Option(answer: "Enable block inheritance at the organizational unit", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "What permissions must a user have for a GPO to be linked? (Choose two.)",
+            options: [
+                Option(answer: "Read", isCorrect: true),
+                Option(answer: "Write", isCorrect: false),
+                Option(answer: "Apply group policy", isCorrect: true),
+                Option(answer: "Administrative", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "If you do not want one user to be affected by a group policy, what can you do?",
+            options: [
+                Option(answer: "Create a new GPO that is assigned to the one user.", isCorrect: false),
+                Option(answer: "Modify the GPO group policy.", isCorrect: false),
+                Option(answer: "Add the user to the administrators group.", isCorrect: false),
+                Option(answer: "Modify the GPO permissions so that the user is denied the Apply Group Policy permission to the GPO.", isCorrect: true)
+            ]
+        ) ,
+        Question(
+            question: "Which of the following can be affected by Group Policies?",
+            options: [
+                Option(answer: "Windows Me", isCorrect: false),
+                Option(answer: "Windows NT", isCorrect: false),
+                Option(answer: "Windows XP", isCorrect: true),
+                Option(answer: "Windows 98", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "By default, if a group policy is in conflict with another group policy, what happens?",
+            options: [
+                Option(answer: "The first group policy stays in effect.", isCorrect: false),
+                Option(answer: "The second GPO overwrites any settings from the first group policy.", isCorrect: true),
+                Option(answer: "If the user is an administrator, the first group policy stays in effect.", isCorrect: false),
+                Option(answer: "The domain level group policy stays in effect.", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "When you set up a group policy to restrict what software can run on a computer, which of the following is not a parameter that can be used to identify the software?",
+            options: [
+                Option(answer: "Name and date of the executable", isCorrect: true),
+                Option(answer: "Path of where the file is located", isCorrect: false),
+                Option(answer: "A digital certificate", isCorrect: false),
+                Option(answer: "A hash value", isCorrect: false),
+                Option(answer: "A zone defined within Internet Explorer", isCorrect: false)            ]
+        ) ,
+        Question(
+            question: "If you need to make a folder redirection based on groups, what do you have to do?",
+            options: [
+                Option(answer: "Configure basic redirection using group policy.", isCorrect: false),
+                Option(answer: "Configure advanced redirection using group policy.", isCorrect: true),
+                Option(answer: "Configure basic redirection using user's profile.", isCorrect: false),
+                Option(answer: "Configure advanced redirection using user's profile.", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "You want to change the wallpaper to one that includes a company logo. What do you do?",
+            options: [
+                Option(answer: "Configure an administrative template using group policy.", isCorrect: true),
+                Option(answer: "Configure an administrative template using the Registry import function.", isCorrect: false),
+                Option(answer: "Create a login script that copies the logo onto the Registry.", isCorrect: false),
+                Option(answer: "Modify the Boot.ini file to point to the new company logo.", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "If you make a change to the group policy and you want the group policy to go into effect immediately, what do you have to do on a Windows Server 2003?",
+            options: [
+                Option(answer: "gpresult /Force", isCorrect: false),
+                Option(answer: "secedit /Update", isCorrect: false),
+                Option(answer: "gpupdate /Force", isCorrect: false),
+                Option(answer: "gpupdate / Sync", isCorrect: true)
+            ]
+        ) ,
+        Question(
+            question: "If you want to see all group policies so that you can figure out where certain settings have come into play, what can you do?",
+            options: [
+                Option(answer: "gpshow", isCorrect: false),
+                Option(answer: "secedit /show", isCorrect: false),
+                Option(answer: "gpresult", isCorrect: true),
+                Option(answer: "gpdupate /showall", isCorrect: false)
+            ]
+        ) ,
+        Question(
+            question: "Which folder is replicated between domain controllers?",
+            options: [
+                Option(answer: "Windows", isCorrect: false),
+                Option(answer: "Windows\\System32", isCorrect: false),
+                Option(answer: "Windows\\System", isCorrect: false),
+                Option(answer: "SYSVOL", isCorrect: true)
+            ]
+        ) ,
+        Question(
+            question: "Where in the group policy settings would you configure computer startup and shutdown scripts?",
+            options: [
+                Option(answer: "Client configuration", isCorrect: false),
+                Option(answer: "User configuration", isCorrect: false),
+                Option(answer: "Startup configuration", isCorrect: false),
+                Option(answer: "computer configuration", isCorrect: true)
             ]
         )
     ]
